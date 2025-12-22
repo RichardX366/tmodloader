@@ -1,4 +1,5 @@
 FROM mcr.microsoft.com/dotnet/runtime:latest
+RUN apt-get install -y curl unzip bash
 WORKDIR /
 
 RUN RELEASE_URL="https://api.github.com/repos/tModLoader/tModLoader/releases/latest" && \
