@@ -1,5 +1,4 @@
-FROM alpine:latest
-RUN apk add --no-cache curl unzip bash
+FROM mcr.microsoft.com/dotnet/runtime:latest
 WORKDIR /
 
 RUN RELEASE_URL="https://api.github.com/repos/tModLoader/tModLoader/releases/latest" && \
