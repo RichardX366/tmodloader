@@ -1,0 +1,18 @@
+version: '3.2'
+services:
+  tmodloader:
+    image: richardxregistry/tmodloader:latest
+    container_name: tmodloader
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    ports:
+      - 7777:7777
+    volumes:
+      - "worlds:/root/.local/share/Terraria/tModLoader/Worlds/"
+      - "/disk/terraria-mods:/root/.local/share/Terraria/tModLoader/Mods/"
+      - "mod-configs:/root/.local/share/Terraria/tModLoader/ModConfigs/"
+
+volumes:
+  worlds:
+  mod-configs:
