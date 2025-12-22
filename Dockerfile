@@ -12,4 +12,4 @@ RUN RELEASE_URL="https://api.github.com/repos/tModLoader/tModLoader/releases/lat
 WORKDIR /tModLoader
 EXPOSE 7777 7878
 
-CMD ["./start-tModLoaderServer.sh"]
+CMD ["./start-tModLoaderServer.sh", "-nosteam"]
