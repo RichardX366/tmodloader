@@ -1,5 +1,5 @@
 FROM alpine:latest
-RUN apk add --no-cache curl unzip
+RUN apk add --no-cache curl unzip bash
 WORKDIR /
 
 RUN RELEASE_URL="https://api.github.com/repos/tModLoader/tModLoader/releases/latest" && \
@@ -12,4 +12,4 @@ RUN RELEASE_URL="https://api.github.com/repos/tModLoader/tModLoader/releases/lat
 WORKDIR /tModLoader
 EXPOSE 7777 7878
 
-ENTRYPOINT ["/bin/sh", "./start-tModLoaderServer.sh"]
+CMD ["./start-tModLoaderServer.sh"]
