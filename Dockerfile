@@ -3,7 +3,8 @@ RUN apt-get update && apt-get install -y curl unzip bash
 WORKDIR /
 
 ADD "https://api.github.com/repos/tModLoader/tModLoader/releases/latest" /tmp/release.json
-RUN ZIP_URL=$(cat /tmp/release.json | grep browser_download_url | grep "tModLoader.zip" | cut -d '"' -f 4) && \
+RUN cat /tmp/release.json && \
+    ZIP_URL=$(cat /tmp/release.json | grep browser_download_url | grep "tModLoader.zip" | cut -d '"' -f 4) && \
     curl -L -o tModLoader.zip $ZIP_URL && \
     unzip /tModLoader.zip -d /tModLoader && \
     rm tModLoader.zip && \
