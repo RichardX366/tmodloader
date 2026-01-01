@@ -6,6 +6,8 @@ services:
     restart: unless-stopped
     stdin_open: true
     tty: true
+    cap_add:
+      - SYS_ADMIN
     ports:
       - 7777:7777
     volumes:
